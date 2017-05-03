@@ -30,5 +30,13 @@ namespace BattleServer.Room.Map
                 return map;
             }
         }
+
+        public static void RemoveScene(ulong id)
+        {
+            if(mapDict.ContainsKey(id))
+            {
+                mapDict.Remove(id);
+            }
+        }
     }
 }

@@ -6,6 +6,8 @@ using BattleServer.Room.Broadcast;
 using BattleServer.Room.Map.PlayerOp;
 using BattleServer.Room.Map.SceneObj;
 using System.Diagnostics;
+using BattleServer.Utils.Event;
+using BattleServer.Room.Message;
 
 
 namespace BattleServer.Room.Map
@@ -23,7 +25,7 @@ namespace BattleServer.Room.Map
 
         private BattleMap map;
 
-        private IBroadcast broadcast;
+        //private IBroadcast broadcast;
         //private List<BattlePlayer> playerList;
         private Dictionary<ulong, BattlePlayer> playerDict;
         //
@@ -36,6 +38,8 @@ namespace BattleServer.Room.Map
 
             map = new BattleMap();
             map.Scene = this;
+            //
+            //broadcast = new LocalBroadcast();
         }
         /// <summary>
         /// 添加一个玩家
@@ -52,13 +56,26 @@ namespace BattleServer.Room.Map
             else
             {
                 player = new BattlePlayer();
+                //战斗中临时分配的ID
                 player.ID = this.GetUserID();
                 playerDict.Add(player.ID, player);
             }
-
+            player.Task = p;
             player.Map = this.map;
             player.BornPosition = this.map.NextBornPos;
-            
+            //
+            //
+            //
+            SceneObjectsMsg msg = new SceneObjectsMsg();
+            msg.mine = player;
+
+            List<BattlePlayer> list = new List<BattlePlayer>();
+            foreach (var item in this.playerDict)
+            {
+                list.Add(item.Value);
+            }
+            msg.others = list;
+            this.Broadcast(player, RoomEvent.SCENE_OBJECTS, msg);
         }
 
         /// <summary>
@@ -118,6 +135,10 @@ namespace BattleServer.Room.Map
             }
         }
 
+        public void Dispose()
+        {
+
+        }
 
         /// <summary>
         /// 获取一个用户在战斗场景中的ID
@@ -145,6 +166,18 @@ namespace BattleServer.Room.Map
             get
             {
                 return this.playerDict;
+            }
+        }
+
+        public void Broadcast(BattlePlayer p, string type, object msg)
+        {
+            p.Task.Broadcast(RoomEvent.SCENE_OBJECTS, msg);
+        }
+        public void BroadcastToAll(string type, object msg)
+        {
+            foreach (var item in this.playerDict)
+            {
+                this.Broadcast(item.Value, type, msg);
             }
         }
     }

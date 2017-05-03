@@ -12,6 +12,7 @@ namespace BattleServer.Room.Broadcast
     /// </summary>
     public interface IBroadcast
     {
-        void Broadcast(List<BattlePlayer> list);
+        void BroadcastToAll(string type,List<BattlePlayer> list,Object obj);
+        void Broadcast(string type, BattlePlayer player, Object obj);
     }
 }

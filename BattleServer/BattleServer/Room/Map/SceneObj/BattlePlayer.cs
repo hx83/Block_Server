@@ -14,6 +14,7 @@ namespace BattleServer.Room.Map.SceneObj
     /// </summary>
     public class BattlePlayer : BaseSceneObject
     {
+        public PlayerTask Task;
         private Timer timer;
         private ulong id;
         private Vector2 pos;
