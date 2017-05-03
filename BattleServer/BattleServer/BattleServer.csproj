@@ -40,6 +40,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behavior3\Actions\Error.cs" />
+    <Compile Include="Behavior3\Actions\Failer.cs" />
+    <Compile Include="Behavior3\Actions\Runner.cs" />
+    <Compile Include="Behavior3\Actions\Succeeder.cs" />
+    <Compile Include="Behavior3\Actions\Wait.cs" />
+    <Compile Include="Behavior3\B3.cs" />
+    <Compile Include="Behavior3\B3Config.cs" />
+    <Compile Include="Behavior3\B3Settings.cs" />
+    <Compile Include="Behavior3\B3Status.cs" />
+    <Compile Include="Behavior3\Composites\MemPriority.cs" />
+    <Compile Include="Behavior3\Composites\MemSequence.cs" />
+    <Compile Include="Behavior3\Composites\Priority.cs" />
+    <Compile Include="Behavior3\Composites\Sequence.cs" />
+    <Compile Include="Behavior3\Core\Action.cs" />
+    <Compile Include="Behavior3\Core\BaseNode.cs" />
+    <Compile Include="Behavior3\Core\BehaviorTree.cs" />
+    <Compile Include="Behavior3\Core\Composite.cs" />
+    <Compile Include="Behavior3\Core\Condition.cs" />
+    <Compile Include="Behavior3\Core\Decorator.cs" />
+    <Compile Include="Behavior3\Core\Tick.cs" />
+    <Compile Include="Behavior3\Decorators\Inverter.cs" />
+    <Compile Include="Behavior3\Decorators\Limiter.cs" />
+    <Compile Include="Behavior3\Decorators\MaxTime.cs" />
+    <Compile Include="Behavior3\Decorators\Repeater.cs" />
+    <Compile Include="Behavior3\Decorators\RepeatUntilFailure.cs" />
+    <Compile Include="Behavior3\Decorators\RepeatUntilSuccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room\Broadcast\IBroadcast.cs" />
     <Compile Include="LoggerHelp.cs" />
