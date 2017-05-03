@@ -69,6 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room\Broadcast\IBroadcast.cs" />
     <Compile Include="LoggerHelp.cs" />
+    <Compile Include="Room\Broadcast\LocalBroadcast.cs" />
     <Compile Include="Room\Map\BattleMap.cs" />
     <Compile Include="Room\Map\BattleScene.cs" />
     <Compile Include="Room\Map\SceneObj\BattlePlayer.cs" />
@@ -82,10 +83,15 @@
     <Compile Include="Room\Map\PlayerOp\JumpOp.cs" />
     <Compile Include="Room\Map\PlayerOp\MoveOp.cs" />
     <Compile Include="Room\Map\SceneObj\BaseSceneObject.cs" />
+    <Compile Include="Room\Message\RoomMessage.cs" />
     <Compile Include="Room\PlayerTask.cs" />
     <Compile Include="Room\Room.cs" />
+    <Compile Include="Utils\Event\RoomEvent.cs" />
+    <Compile Include="Utils\Event\EventDispatcher.cs" />
+    <Compile Include="Utils\Event\RoomEventDispatcher.cs" />
     <Compile Include="Utils\Vector2.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
