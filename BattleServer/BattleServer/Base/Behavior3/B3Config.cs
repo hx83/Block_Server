@@ -18,7 +18,7 @@ namespace Behavior3CSharp
 
         public static JsonData Parse(string content)
         {
-            return JsonMapper.ToJson(content);
+            return JsonMapper.ToObject(content);
         }
 
         public static void Setup()
