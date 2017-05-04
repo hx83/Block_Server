@@ -26,89 +26,94 @@
  * @module Behavior3JS
  **/
 
-using BattleServer.Utils;
+using Base.Utils;
 // namespace:
 using Behavior3CSharp.Core;
+using System.Diagnostics;
 namespace Behavior3CSharp.Actions
 {
 
-/**
- * Wait a few seconds.
- *
- * @class Wait
- * @extends Action
-**/
+    /**
+     * Wait a few seconds.
+     *
+     * @class Wait
+     * @extends Action
+    **/
 
-  public class Wait : Action
+    public class Wait : Action
     {
-    /**
-     * Node name. Default to `Wait`.
-     *
-     * @property name
-     * @type {String}
-     * @readonly
-    **/
-      public const string name = "Wait";
+        /**
+         * Node name. Default to `Wait`.
+         *
+         * @property name
+         * @type {String}
+         * @readonly
+        **/
+        public const string name = "Wait";
 
-    /**
-     * Node title. Default to `Wait XXms`. Used in Editor.
-     *
-     * @property title
-     * @type {String}
-     * @readonly
-    **/
-    public const string title = "Wait <milliseconds>ms";
+        /**
+         * Node title. Default to `Wait XXms`. Used in Editor.
+         *
+         * @property title
+         * @type {String}
+         * @readonly
+        **/
+        public const string title = "Wait <milliseconds>ms";
 
-    private double _endTime;
+        private double _endTime;
 
-    private double _startTime;
+        private double _startTime;
 
-    private const string millisecondsKey = "milliseconds";
+        private const string millisecondsKey = "milliseconds";
 
-    /**
-     * Initialization method.
-     *
-     * Settings parameters:
-     *
-     * - **milliseconds** (*Integer*) Maximum time, in milliseconds, a child
-     *                                can execute.
-     *
-     * @method initialize
-     * @param {Object} settings Object with parameters.
-     * @constructor
-    **/
-    public Wait(B3Settings settings):base(settings) 
-    {
-        this._endTime = float.Parse(_properties[millisecondsKey]);
-    }
-
-    /**
-     * Open method.
-     *
-     * @method open
-     * @param {Tick} tick A tick instance.
-    **/
-    protected override void OnEnter(Tick tick) {
-        _startTime = LocalTime.NowSeconds;
-    }
-
-    /**
-     * Tick method.
-     *
-     * @method tick
-     * @param {Tick} tick A tick instance.
-     * @returns {Constant} A state constant.
-    **/
-      protected override B3Status OnTick(Tick tick)
-{
-        double currTime = LocalTime.NowSeconds;
-        if (currTime - _startTime > this._endTime) {
-            return B3Status.SUCCESS;
+        /**
+         * Initialization method.
+         *
+         * Settings parameters:
+         *
+         * - **milliseconds** (*Integer*) Maximum time, in milliseconds, a child
+         *                                can execute.
+         *
+         * @method initialize
+         * @param {Object} settings Object with parameters.
+         * @constructor
+        **/
+        public Wait(B3Settings settings)
+            : base(settings)
+        {
+            this._endTime = float.Parse(_properties[millisecondsKey]);
         }
-        
-        return B3Status.RUNNING;
+
+        /**
+         * Open method.
+         *
+         * @method open
+         * @param {Tick} tick A tick instance.
+        **/
+        protected override void OnOpen(Tick tick)
+        {
+            _startTime = LocalTime.NowMilliseconds;
+        }
+
+        /**
+         * Tick method.
+         *
+         * @method tick
+         * @param {Tick} tick A tick instance.
+         * @returns {Constant} A state constant.
+        **/
+        protected override B3Status OnTick(Tick tick)
+        {
+            double currTime = LocalTime.NowMilliseconds;
+
+            if (currTime - _startTime > this._endTime)
+            {
+                return B3Status.SUCCESS;
+            }
+
+            return B3Status.RUNNING;
+        }
+
+
     }
-
-
-  }
 }
