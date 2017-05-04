@@ -40,32 +40,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Behavior3\Actions\Error.cs" />
-    <Compile Include="Behavior3\Actions\Failer.cs" />
-    <Compile Include="Behavior3\Actions\Runner.cs" />
-    <Compile Include="Behavior3\Actions\Succeeder.cs" />
-    <Compile Include="Behavior3\Actions\Wait.cs" />
-    <Compile Include="Behavior3\B3.cs" />
-    <Compile Include="Behavior3\B3Config.cs" />
-    <Compile Include="Behavior3\B3Settings.cs" />
-    <Compile Include="Behavior3\B3Status.cs" />
-    <Compile Include="Behavior3\Composites\MemPriority.cs" />
-    <Compile Include="Behavior3\Composites\MemSequence.cs" />
-    <Compile Include="Behavior3\Composites\Priority.cs" />
-    <Compile Include="Behavior3\Composites\Sequence.cs" />
-    <Compile Include="Behavior3\Core\Action.cs" />
-    <Compile Include="Behavior3\Core\BaseNode.cs" />
-    <Compile Include="Behavior3\Core\BehaviorTree.cs" />
-    <Compile Include="Behavior3\Core\Composite.cs" />
-    <Compile Include="Behavior3\Core\Condition.cs" />
-    <Compile Include="Behavior3\Core\Decorator.cs" />
-    <Compile Include="Behavior3\Core\Tick.cs" />
-    <Compile Include="Behavior3\Decorators\Inverter.cs" />
-    <Compile Include="Behavior3\Decorators\Limiter.cs" />
-    <Compile Include="Behavior3\Decorators\MaxTime.cs" />
-    <Compile Include="Behavior3\Decorators\Repeater.cs" />
-    <Compile Include="Behavior3\Decorators\RepeatUntilFailure.cs" />
-    <Compile Include="Behavior3\Decorators\RepeatUntilSuccess.cs" />
+    <Compile Include="Base\Behavior3\Actions\Error.cs" />
+    <Compile Include="Base\Behavior3\Actions\Failer.cs" />
+    <Compile Include="Base\Behavior3\Actions\Runner.cs" />
+    <Compile Include="Base\Behavior3\Actions\Succeeder.cs" />
+    <Compile Include="Base\Behavior3\Actions\Wait.cs" />
+    <Compile Include="Base\Behavior3\B3.cs" />
+    <Compile Include="Base\Behavior3\B3Config.cs" />
+    <Compile Include="Base\Behavior3\B3Settings.cs" />
+    <Compile Include="Base\Behavior3\B3Status.cs" />
+    <Compile Include="Base\Behavior3\Composites\MemPriority.cs" />
+    <Compile Include="Base\Behavior3\Composites\MemSequence.cs" />
+    <Compile Include="Base\Behavior3\Composites\Priority.cs" />
+    <Compile Include="Base\Behavior3\Composites\Sequence.cs" />
+    <Compile Include="Base\Behavior3\Core\Action.cs" />
+    <Compile Include="Base\Behavior3\Core\BaseNode.cs" />
+    <Compile Include="Base\Behavior3\Core\BehaviorTree.cs" />
+    <Compile Include="Base\Behavior3\Core\Composite.cs" />
+    <Compile Include="Base\Behavior3\Core\Condition.cs" />
+    <Compile Include="Base\Behavior3\Core\Decorator.cs" />
+    <Compile Include="Base\Behavior3\Core\Tick.cs" />
+    <Compile Include="Base\Behavior3\Decorators\Inverter.cs" />
+    <Compile Include="Base\Behavior3\Decorators\Limiter.cs" />
+    <Compile Include="Base\Behavior3\Decorators\MaxTime.cs" />
+    <Compile Include="Base\Behavior3\Decorators\Repeater.cs" />
+    <Compile Include="Base\Behavior3\Decorators\RepeatUntilFailure.cs" />
+    <Compile Include="Base\Behavior3\Decorators\RepeatUntilSuccess.cs" />
+    <Compile Include="Base\LitJson\IJsonWrapper.cs" />
+    <Compile Include="Base\LitJson\JsonData.cs" />
+    <Compile Include="Base\LitJson\JsonException.cs" />
+    <Compile Include="Base\LitJson\JsonMapper.cs" />
+    <Compile Include="Base\LitJson\JsonMockWrapper.cs" />
+    <Compile Include="Base\LitJson\JsonReader.cs" />
+    <Compile Include="Base\LitJson\JsonWriter.cs" />
+    <Compile Include="Base\LitJson\Lexer.cs" />
+    <Compile Include="Base\LitJson\ParserToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room\Broadcast\IBroadcast.cs" />
     <Compile Include="LoggerHelp.cs" />
@@ -91,7 +100,19 @@
     <Compile Include="Utils\Event\RoomEventDispatcher.cs" />
     <Compile Include="Utils\Vector2.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Base\LitJson\AssemblyInfo.cs.in" />
+    <None Include="Base\LitJson\AssemblyInfo.cs.in.meta" />
+    <None Include="Base\LitJson\IJsonWrapper.cs.meta" />
+    <None Include="Base\LitJson\JsonData.cs.meta" />
+    <None Include="Base\LitJson\JsonException.cs.meta" />
+    <None Include="Base\LitJson\JsonMapper.cs.meta" />
+    <None Include="Base\LitJson\JsonMockWrapper.cs.meta" />
+    <None Include="Base\LitJson\JsonReader.cs.meta" />
+    <None Include="Base\LitJson\JsonWriter.cs.meta" />
+    <None Include="Base\LitJson\Lexer.cs.meta" />
+    <None Include="Base\LitJson\ParserToken.cs.meta" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
