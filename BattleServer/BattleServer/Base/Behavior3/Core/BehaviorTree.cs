@@ -202,9 +202,12 @@ public class BehaviorTree
         this.description = (string)data["description"];
         string rootID = (string)data["root"];
         IDictionary<string, string> treePropDic  = data["properties"] as IDictionary<string, string>;
-        foreach(string treePropKey in treePropDic.Keys)
+        if (treePropDic != null)
         {
-            this.properties.Add(treePropKey, treePropDic[treePropKey]);
+            foreach (string treePropKey in treePropDic.Keys)
+            {
+                this.properties.Add(treePropKey, treePropDic[treePropKey]);
+            }
         }
 
         // Create the node list (without connection between them)
