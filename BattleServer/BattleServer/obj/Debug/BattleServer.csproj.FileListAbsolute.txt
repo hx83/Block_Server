@@ -3,3 +3,6 @@ D:\work\FO\VSProjects\Block_Server\BattleServer\BattleServer\bin\Debug\BattleSer
 D:\work\FO\VSProjects\Block_Server\BattleServer\BattleServer\bin\Debug\BattleServer.pdb
 D:\work\FO\VSProjects\Block_Server\BattleServer\BattleServer\obj\Debug\BattleServer.dll
 D:\work\FO\VSProjects\Block_Server\BattleServer\BattleServer\obj\Debug\BattleServer.pdb
+D:\UnityProject\VS\Block_Server\BattleServer\BattleServer\obj\Debug\BattleServer.csprojResolveAssemblyReference.cache
+D:\UnityProject\VS\Block_Server\BattleServer\BattleServer\obj\Debug\BattleServer.dll
+D:\UnityProject\VS\Block_Server\BattleServer\BattleServer\obj\Debug\BattleServer.pdb
