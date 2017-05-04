@@ -143,14 +143,6 @@ public class BehaviorTree
      */
     private BaseNode _root;
 
-    /**
-     * The reference to the debug instance.
-     *
-     * @property debug
-     * @type {Object}
-     */
-    private object _debug;
-
     private Dictionary<string, BaseNode> _nodeDic;
 
     private object _target;

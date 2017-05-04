@@ -92,7 +92,7 @@ namespace Behavior3CSharp.Decorators
         **/
         protected override void OnOpen(Tick tick)
         {
-            _startTime = LocalTime.SecondsNow;
+            _startTime = LocalTime.NowSeconds;
         }
 
         /**
@@ -109,7 +109,7 @@ namespace Behavior3CSharp.Decorators
                 return B3Status.ERROR;
             }
 
-            double currTime = LocalTime.SecondsNow;
+            double currTime = LocalTime.NowSeconds;
 
             B3Status status = this._child.Execute(tick);
             if (currTime - _startTime > this._maxTime)

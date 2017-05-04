@@ -80,8 +80,6 @@ namespace Behavior3CSharp.Core
         **/
         public readonly string category = B3.COMPOSITE;
 
-        protected B3Settings _settings;
-
         protected List<BaseNode> _children;
 
         /**

@@ -26,6 +26,7 @@
  * @module Behavior3JS
  **/
 
+using BattleServer.Utils;
 // namespace:
 using Behavior3CSharp.Core;
 namespace Behavior3CSharp.Actions
@@ -58,11 +59,9 @@ namespace Behavior3CSharp.Actions
     **/
     public const string title = "Wait <milliseconds>ms";
 
-    private float _endTime;
+    private double _endTime;
 
-    private float _startTime;
-
-    protected B3Settings _settings;
+    private double _startTime;
 
     private const string millisecondsKey = "milliseconds";
 
@@ -90,7 +89,7 @@ namespace Behavior3CSharp.Actions
      * @param {Tick} tick A tick instance.
     **/
     protected override void OnEnter(Tick tick) {
-        _startTime = Time.time;
+        _startTime = LocalTime.NowSeconds;
     }
 
     /**
@@ -102,7 +101,7 @@ namespace Behavior3CSharp.Actions
     **/
       protected override B3Status OnTick(Tick tick)
 {
-        float currTime = Time.time;
+        double currTime = LocalTime.NowSeconds;
         if (currTime - _startTime > this._endTime) {
             return B3Status.SUCCESS;
         }

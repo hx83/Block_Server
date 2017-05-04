@@ -39,7 +39,7 @@ namespace Behavior3CSharp.Actions
 
         }
 
-        public B3Status Tick(Tick tick)
+        protected override B3Status OnTick(Tick tick)
         {
             return B3Status.ERROR;
         }

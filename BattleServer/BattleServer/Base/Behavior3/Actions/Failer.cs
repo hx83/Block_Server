@@ -60,10 +60,9 @@ namespace Behavior3CSharp.Actions
          * @param {b3.Tick} tick A tick instance.
          * @returns {Constant} Always return `b3.FAILURE`.
         **/
-        public B3Status Tick(Tick tick)
+        protected override B3Status OnTick(Tick tick)
         {
             return B3Status.FAILURE;
         }
-
     }
 }

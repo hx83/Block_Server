@@ -14,9 +14,9 @@ namespace BattleServer.Utils.Event
 
         public void AddEventListener(string type, System.Action<RoomEvent> listener)
         {
-            if (_eventDictionary.ContainsKey(type))
+            System.Action<RoomEvent> function;
+            if (_eventDictionary.TryGetValue(type, out function))
             {
-                System.Action<RoomEvent> function = _eventDictionary[type];
                 function -= listener;
                 function += listener;
                 _eventDictionary.Remove(type);

@@ -79,8 +79,6 @@ namespace Behavior3CSharp.Core
         **/
         public readonly string category = B3.DECORATOR;
 
-        protected B3Settings _settings;
-
         protected BaseNode _child;
 
         /**
