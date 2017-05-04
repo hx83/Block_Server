@@ -56,11 +56,10 @@ namespace Behavior3CSharp.Core
          * @type {String}
          * @readonly
         **/
-        public const string category = B3.ACTION;
 
         public Action(B3Settings settings):base(settings)
         {
-
+            _category = B3.ACTION;
         }
     }
 }

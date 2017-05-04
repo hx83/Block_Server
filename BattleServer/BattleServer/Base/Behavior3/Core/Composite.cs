@@ -90,6 +90,7 @@ namespace Behavior3CSharp.Core
         **/
         public Composite(B3Settings settings):base(settings)
         {
+            _category = B3.COMPOSITE;
             _children = new List<BaseNode>();
         }
 

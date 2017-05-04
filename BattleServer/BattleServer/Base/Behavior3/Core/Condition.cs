@@ -46,12 +46,11 @@ namespace Behavior3CSharp.Core
          * @type {String}
          * @readonly
         **/
-        public readonly string category = B3.CONDITION;
 
         public Condition(B3Settings settings)
             : base(settings)
         {
-
+            _category = B3.CONDITION;
         }
 
     }

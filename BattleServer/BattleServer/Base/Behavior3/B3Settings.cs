@@ -99,15 +99,18 @@ namespace Behavior3CSharp
             _name = (string)data["name"];
             _title = (string)data["title"];
             _description = (string)data["description"];
-            if ((data as IDictionary).Contains("children"))
+            if (data.Keys.Contains("children"))
             {
-                IList<string> childrenList = data["children"] as IList<string>;
-                _children.AddRange(childrenList);
+                int count = data["children"].Count;
+                for (int i = 0; i < count; i++)
+                {
+                    _children.Add((string)data["children"][i]);
+                }
             }
-            IDictionary<string, string> propDic = data["properties"] as IDictionary<string, string>;
-            foreach (string propKey in propDic.Keys)
+            foreach (string propKey in data["properties"].Keys)
             {
-                _properties.Add(propKey, propDic[propKey]);
+                JsonData propertyData = data["properties"];
+                _properties.Add(propKey, propertyData[propKey].ToString());
             }
         }
     }

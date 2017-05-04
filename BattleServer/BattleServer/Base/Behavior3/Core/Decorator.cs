@@ -77,7 +77,6 @@ namespace Behavior3CSharp.Core
          * @type {String}
          * @readonly
         **/
-        public readonly string category = B3.DECORATOR;
 
         protected BaseNode _child;
 
@@ -89,6 +88,7 @@ namespace Behavior3CSharp.Core
         **/
         public Decorator(B3Settings settings):base(settings)
         {
+            _category = B3.DECORATOR;
         }
 
         public BaseNode GetChild()
