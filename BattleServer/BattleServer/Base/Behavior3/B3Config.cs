@@ -39,7 +39,10 @@ namespace Behavior3CSharp
             _classDic.Add(RepeatUntilFailure.name, typeof(RepeatUntilFailure));
             _classDic.Add(RepeatUntilSuccess.name, typeof(RepeatUntilSuccess));
         }
-
+        public static void Register(string str, Type type)
+        {
+            _classDic.Add(str, type);
+        }
         public static Type GetClassType(string className)
         {
             return _classDic[className];
