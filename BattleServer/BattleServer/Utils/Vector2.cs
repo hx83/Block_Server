@@ -63,5 +63,10 @@ namespace BattleServer.Utils
         {
             return new Vector2(v1.X * n, v1.Y * n);
         }
+
+        public static float Distance(Vector2 a, Vector2 b)
+        {
+            return (float)Math.Sqrt(a.X * b.X + a.Y * b.Y);
+        }
     }
 }

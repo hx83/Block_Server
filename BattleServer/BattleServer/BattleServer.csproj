@@ -40,6 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Astar\AStarAbstractGrid.cs" />
+    <Compile Include="Base\Astar\AStarGrid.cs" />
+    <Compile Include="Base\Astar\AStarGridManager.cs" />
+    <Compile Include="Base\Astar\Collections\NodeQueue.cs" />
+    <Compile Include="Base\Astar\Collections\OpenNodeMap.cs" />
+    <Compile Include="Base\Astar\Index.cs" />
+    <Compile Include="Base\Astar\IPathNode.cs" />
+    <Compile Include="Base\Astar\Path.cs" />
+    <Compile Include="Base\Astar\Pathfinding\Algorithm\EuclideanProvider.cs" />
+    <Compile Include="Base\Astar\Pathfinding\Algorithm\HeuristicProvider.cs" />
+    <Compile Include="Base\Astar\Pathfinding\PathNode.cs" />
+    <Compile Include="Base\Astar\Pathfinding\SearchGrid.cs" />
+    <Compile Include="Base\Astar\PathRouteNode.cs" />
+    <Compile Include="Base\Astar\Threading\AsyncPathRequest.cs" />
+    <Compile Include="Base\Astar\Threading\AsyncPathResult.cs" />
+    <Compile Include="Base\Astar\Threading\ThreadManager.cs" />
+    <Compile Include="Base\Astar\Threading\WorkerThread.cs" />
     <Compile Include="Base\Behavior3\Actions\Error.cs" />
     <Compile Include="Base\Behavior3\Actions\Failer.cs" />
     <Compile Include="Base\Behavior3\Actions\Runner.cs" />
@@ -98,6 +115,7 @@
     <Compile Include="Utils\Event\RoomEvent.cs" />
     <Compile Include="Utils\Event\EventDispatcher.cs" />
     <Compile Include="Utils\Event\RoomEventDispatcher.cs" />
+    <Compile Include="Utils\LocalTime.cs" />
     <Compile Include="Utils\Vector2.cs" />
   </ItemGroup>
   <ItemGroup>
