@@ -26,9 +26,10 @@
  * @module Behavior3JS
  **/
 
-using BattleServer.Utils;
+using Base.Utils;
 // namespace:
 using Behavior3CSharp.Core;
+using System.Diagnostics;
 namespace Behavior3CSharp.Actions
 {
 
@@ -104,11 +105,15 @@ namespace Behavior3CSharp.Actions
         protected override B3Status OnTick(Tick tick)
         {
             double currTime = LocalTime.NowMilliseconds;
+
             if (currTime - _startTime > this._endTime)
             {
                 return B3Status.SUCCESS;
             }
+
             return B3Status.RUNNING;
         }
+
+
     }
 }

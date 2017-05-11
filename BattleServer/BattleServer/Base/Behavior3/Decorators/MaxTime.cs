@@ -26,7 +26,7 @@
  * @module Behavior3JS
  **/
 
-using BattleServer.Utils;
+using Base.Utils;
 // namespace:
 using Behavior3CSharp.Core;
 namespace Behavior3CSharp.Decorators
