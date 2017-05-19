@@ -76,10 +76,10 @@ namespace AStar_2D
         private bool isWithinDistanceOfNode(IPathNode node, Vector2 position)
         {
             // Calculate the distance to the node
-            float distance = Vector2.Distance(position, node.WorldPosition);
+            float distance = Vector2.DistanceSquare(position, node.WorldPosition);
 
             // Check if we are within tolerance
-            return distance < distanceTolerance;
+            return distance < distanceTolerance * distanceTolerance;
         }
     }
 }
